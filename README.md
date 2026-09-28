@@ -10,8 +10,8 @@ The **Update Last Modified** workflow automatically records the date, time, and 
 
 | Property | Value |
 |-----------|-----------|
-| File location | `.github/workflows/update-last-modified.yml` |
-| Workflow name | `Update Last Modified` |
+| File location | `.github/workflows/update-last-modified-details.yml` |
+| Workflow name | `Update Last Modified Details` |
 
 The workflow is triggered automatically when a Markdown file is modified and pushed to the repository. Only modified Markdown files containing the required markers are updated.
 
