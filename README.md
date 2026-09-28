@@ -1,71 +1,61 @@
-Automatic Last Modified Metadata 
+# Automatic Last Modified Metadata
 
-GitHub Actions documentation for Markdown files 
+This GitHub Action automatically updates the latest modification information in Markdown (`.md`) files within the repository.
 
-This GitHub Action automatically updates the latest modification information in Markdown (.md) files within the repository. 
+## Purpose
 
-Purpose 
+The **Update Last Modified** workflow automatically records the date, time, and display name of the person who last modified a Markdown document.
 
-The Update Last Modified workflow automatically records the date, time, and display name of the person who last modified a Markdown document. 
+## Workflow
 
-Workflow 
+| Property | Value |
+|-----------|-----------|
+| File location | `.github/workflows/update-last-modified.yml` |
+| Workflow name | `Update Last Modified` |
 
-File location 
+The workflow is triggered automatically when a Markdown file is modified and pushed to the repository. Only modified Markdown files containing the required markers are updated.
 
-.github/workflows/update-last-modified.yml 
+## Required Configuration in Markdown Files
 
-Workflow name 
+Each Markdown file must contain the following block under the **Last Modified** section:
 
-Update Last Modified 
+```md
+#### Last Modified
 
-The workflow is triggered automatically when a Markdown file is modified and pushed to the repository. Only modified Markdown files containing the required markers are updated. 
+<!-- LAST_MODIFIED_START -->
+Not yet updated
+<!-- LAST_MODIFIED_END -->
+```
 
-Required Configuration in Markdown Files 
+### Important Requirements
 
-Each Markdown file must contain the following block under the Last Modified section: 
+- The `LAST_MODIFIED_START` marker is required.
+- The `LAST_MODIFIED_END` marker is required.
+- Everything between the markers is automatically replaced by the workflow.
+- The marker block must be present for automatic updates to work.
+- The heading `#### Last Modified` is recommended for consistency.
 
-#### Last Modified 
- 
-<!-- LAST_MODIFIED_START --> 
-Not yet updated 
-<!-- LAST_MODIFIED_END --> 
+## How It Works
 
- 
+1. A user modifies a Markdown file.
+2. The change is committed and pushed to GitHub.
+3. The **Update Last Modified** workflow is triggered.
+4. The workflow identifies the modified Markdown file and updates the date, time, and display name.
+5. The workflow automatically commits the updated metadata back to the repository.
 
-Important Requirements 
+## Example Result
 
-The LAST_MODIFIED_START marker is required. 
+```md
+#### Last Modified
 
-The LAST_MODIFIED_END marker is required. 
+<!-- LAST_MODIFIED_START -->
+23-09-2026 15:15:27 by Egzon Zeneli
+<!-- LAST_MODIFIED_END -->
+```
 
-Everything between the markers is automatically replaced by the workflow. 
+## Notes
 
-The marker block must be present for automatic updates to work. 
-
-The heading #### Last Modified is recommended for consistency. 
-
-How It Works 
-
-A user modifies a Markdown file. 
-
-The change is committed and pushed to GitHub. 
-
-The Update Last Modified workflow is triggered. 
-
-The workflow identifies the modified Markdown file and updates the date, time, and display name. 
-
-The workflow automatically commits the updated metadata back to the repository. 
-
-Example Result 
-
-#### Last Modified 
- 
-<!-- LAST_MODIFIED_START --> 
-23-09-2026 15:15:27 by Egzon Zeneli 
-<!-- LAST_MODIFIED_END --> 
-
- 
-
-Notes 
-
-Markdown files without the required markers are not changed. The workflow-generated commit is excluded from triggering the workflow again, preventing an infinite update loop. 
+- Markdown files without the required markers are not updated.
+- Only Markdown files modified in the most recent commit are processed.
+- Workflow-generated commits are excluded from triggering the workflow again, preventing an infinite update loop.
+- GitHub usernames can be mapped to display names for improved readability in documentation.
