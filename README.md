@@ -1,5 +1,4 @@
 # Automatic Last Modified Metadata
-aaa
 This GitHub Action automatically updates the latest modification information in Markdown (`.md`) files within the repository.
 
 ## Purpose
