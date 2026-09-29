@@ -22,7 +22,7 @@ Each Markdown file must contain the following block under the **Last Modified** 
 #### Last Modified
 
 <!-- LAST_MODIFIED_START -->
-Not yet updated
+29-09-2026 15:25:21 door Skenderbyte
 <!-- LAST_MODIFIED_END -->
 ```
 
@@ -48,7 +48,7 @@ Not yet updated
 #### Last Modified
 
 <!-- LAST_MODIFIED_START -->
-23-09-2026 15:15:27 by Egzon Zeneli
+29-09-2026 15:25:21 door Skenderbyte
 <!-- LAST_MODIFIED_END -->
 ```
 
@@ -63,5 +63,5 @@ Not yet updated
 
 #### Last Modified
 <!-- LAST_MODIFIED_START -->
-23-09-2026 15:15:27 by Egzon Zeneli
+29-09-2026 15:25:21 door Skenderbyte
 <!-- LAST_MODIFIED_END -->
